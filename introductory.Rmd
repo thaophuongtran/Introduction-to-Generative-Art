@@ -1,0 +1,93 @@
+---
+title: "Introduction to Generative Art"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+#load library
+library(aRtsy)
+library(particles)
+library(ambient)
+library(ggforce)
+library(ragg)
+library(tidyverse)
+```
+
+```{r colors}
+#color palettes implemented in aRtsy
+colors = c("blackwhite","bell","boogy1","boogy2","boogy3",
+           "dark1","dark2","dark3","flora","house","jasp",
+           "jfa","jungle","klimt","kpd","lava","origami",
+           "mixer1","mixer2","mixer3","mixer4","nature",
+           "neon1","neon2","retro1","retro2","retro3","retro4",
+           "sooph","sky","tuscany1","tuscany2","tuscany3",
+           "vrolik1","vrolik2","vrolik3","vrolik4","vrolik5"
+           )
+```
+
+# Iterative collection
+
+```{r iteractive_collection}
+canvas_ant(colors = colorPalette("mixer2"))
+canvas_cobweb(colors = colorPalette("tuscany3"))
+canvas_collatz(colors = colorPalette("bell"))
+canvas_chladni(colors = colorPalette("boogy2"))
+canvas_flow(colors = colorPalette("dark2"))
+canvas_maze(color = "#fafafa")
+canvas_petri(colors = colorPalette("house"))
+canvas_planet(colors = colorPalette("retro3"))
+canvas_splits(colors = colorPalette("origami"))
+canvas_stripes(colors = colorPalette("random", n = 10))
+canvas_strokes(colors = colorPalette("nature"))
+canvas_phyllotaxis(colors = colorPalette("neon2"))
+canvas_recaman(colors = colorPalette("sooph", n = 10))
+canvas_turmite(colors = colorPalette("dark2"))
+canvas_watercolors(colors = colorPalette("vrolik4"))
+```
+
+# Geometric collection
+```{r geom_collection}
+canvas_diamonds(colors = colorPalette("lava"))
+canvas_function(colors = colorPalette("jfa"))
+canvas_polylines(colors = colorPalette("klimt"))
+canvas_ribbons(colors = colorPalette("jasp"))
+canvas_segments(colors = colorPalette("sky"))
+canvas_squares(colors = colorPalette("random",n=10))
+```
+
+
+# Supervised collection
+```{r supervised}
+canvas_blacklight(colors = colorPalette("mixer4"))
+canvas_forest(colors = colorPalette("retro2"))
+canvas_gemstone(colors = colorPalette("origami"))
+canvas_mosaic(colors = colorPalette("tuscany1"))
+canvas_nebula(colors = colorPalette("dark1"))
+```
+
+
+# Static collection
+```{r static}
+canvas_circlemap(colors = colorPalette("vrolik2"))
+canvas_mandelbrot(colors = colorPalette("random",n=5))
+```
+
+# Color palettes
+
+```{r colors_exp}
+#try different color palettes
+for (color in colors){
+  print(paste("Color palettes:",color))
+  print(canvas_circlemap(colors = colorPalette(color)))
+  
+}
+```
+
+
+
+
+
+
+
+
+
